@@ -1,2 +1,4 @@
 .replit
 replit.nix
+node_modules
+.upm
