@@ -1,5 +1,6 @@
 {
   "dependencies": {
     "octokit": "^2.0.10"
-  }
+  },
+  "type": "module"
 }

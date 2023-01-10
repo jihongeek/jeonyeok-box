@@ -1,3 +1,5 @@
+import { Octokit } from "octokit";
+import fs from 'fs';
 function toKoreanTime(date) {
     const koreanTime = date.getTime() + (-date.getTimezoneOffset() + 540) * 1000 * 60
     return koreanTime
@@ -27,11 +29,35 @@ function makePercentBar(percent) {
     let filledCount = Math.floor(percent / 10) * 2
     return "█".repeat(filledCount) + "░".repeat(20 - filledCount)
 }
-let start = new Date(toKoreanTime(new Date(2022, 4 - 1, 11, 14)))
-let end = new Date(toKoreanTime(new Date(2023, 10 - 1, 11)))
+
+const data = fs.readFileSync('config.json', 'utf8')
+const config = JSON.parse(data)
+
+let startDateList = config.startDate.split("-").map(x => parseInt(x))
+startDateList[1] -= 1
+let endDateList = config.endDate.split("-").map(x => parseInt(x))
+endDateList[1] -= 1
+
+let start = new Date(toKoreanTime(new Date(...startDateList, 11, 14)))
+let end = new Date(toKoreanTime(new Date(...endDateList, 11)))
 let passedPercent = getPassedPercent(start, end)
-let boxText = `🎉 ROKA 전역(轉役)까지...${getLeftDay(end)}일
+
+let boxText = `🎉 ${config.militaryType} 전역(轉役)${getLeftDay(end) < 0 ? "한 지" : "까지"}...${getLeftDay(end) < 0 ? -getLeftDay(end) : getLeftDay(end)}일
 ⏰ ${dateToString(start)} / ${dateToString(end)}
 💌 ${makePercentBar(passedPercent)} ${passedPercent}%`
+
+const octokit = new Octokit({
+    auth: process.env.GH_TOKEN
+})
+
+await octokit.request(`PATCH /gists/${process.env.GIST_ID}`, {
+    gist_id: process.env.GIST_ID,
+    description: '토..통신보안?',
+    files: {
+        'README.md': {
+            content: boxText
+        }
+    }
+})
 
 
