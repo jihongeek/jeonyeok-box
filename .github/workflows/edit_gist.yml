@@ -6,10 +6,10 @@ name: Edit Gist!
 on:
   schedule:
     - cron: '00 15 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
