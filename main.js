@@ -46,8 +46,6 @@ let boxText = `🎉 ${config.militaryType} 전역(轉役)${getLeftDay(end) < 0 ?
 ⏰ ${dateToString(start)} / ${dateToString(end)}
 💌 ${makePercentBar(passedPercent)} ${passedPercent}%`
 
-process.env.GIST_ID = "d6291be4514ce2886ec30273c3f12e09"
-process.env.GH_TOKEN = "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"
 const octokit = new Octokit({
     auth: process.env.GH_TOKEN
 })
