@@ -18,7 +18,7 @@
 > 이 프로젝트는 [productive-box](https://github.com/maxam2017/productive-box) 에서 영감을 받았습니다.
 
 ## 개요
-전역일을 자동으로 계산해서 Gist에 반영해주는 간단한 프로젝트     
+Github Actions를 이용해 날마다 전역일을 자동으로 계산해서 Gist에 반영해주는 간단한 프로젝트     
 ## 사용법
 
 ### 시작 전
