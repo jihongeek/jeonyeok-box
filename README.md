@@ -38,5 +38,5 @@ Github Actions를 이용해 날마다 전역일을 자동으로 계산해서 Gis
    - **GIST_ID:** Gist 링크 뒤에 붙어있는 이상한? 문자열이 Gist ID다.
      `https://gist.github.com/jihongeek/`**`d6291be4514ce2886ec30273c3f12e09`**`
 6. [새로만든 Gist를 프로필에 고정한다.](https://help.github.com/en/github/setting-up-and-managing-your-github-profile/pinning-items-to-your-profile)
-7. 그럼 하루에 한번씩 전역일이 계산되어 적용된다. 코딩하면서 전역의 꿈🎇을 꿔보자!
+7. 그럼 하루에 한번씩 전역일이 계산되어 적용된다. 코딩하면서 전역의 꿈🎇을 꿔보자!(전역 98일전! 무야호!)  
 
