@@ -26,7 +26,7 @@ function getPassedPercent(start, end) {
     return Math.floor((nowKoreanTime - start) / (end - start) * 100)
 }
 function makePercentBar(percent) {
-    let filledCount = Math.floor(percent / 10) * 2
+    let filledCount = Math.floor(percent / 5)
     return "█".repeat(filledCount) + "░".repeat(20 - filledCount)
 }
 
