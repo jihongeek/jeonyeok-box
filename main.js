@@ -27,6 +27,10 @@ function getPassedPercent(start, end) {
 }
 function makePercentBar(percent) {
     let filledCount = Math.floor(percent / 5)
+    if (percent >= 100)
+    {
+        filledCount = 20
+    }
     return "█".repeat(filledCount) + "░".repeat(20 - filledCount)
 }
 
