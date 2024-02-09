@@ -53,12 +53,12 @@ let boxText = `🎉 ${config.militaryType} 전역(轉役)${getLeftDay(end) < 0 ?
 const octokit = new Octokit({
     auth: process.env.GH_TOKEN
 })
-
+gistDescription = getLeftDay(end) < 0 ? "토..통신보안?" : "감사합니다! 열심히 살게요~✨"
 await octokit.request(`PATCH /gists/${process.env.GIST_ID}`, {
     gist_id: process.env.GIST_ID,
-    description: '토..통신보안?',
+    description: gistDescription,
     files: {
-        'README.md': {
+        'My JeonyeokBox.md': {
             content: boxText
         }
     }
