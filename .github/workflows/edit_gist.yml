@@ -27,7 +27,7 @@ jobs:
     - name : Install Dependencies 
       run: npm install
     - name : Edit Gist
-      run : node main.js
+      run : npm tsc main.ts && node main.js
       env : 
         GH_TOKEN : ${{secrets.GH_TOKEN}}
         GIST_ID : ${{secrets.GIST_ID}}
