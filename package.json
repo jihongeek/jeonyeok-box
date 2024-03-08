@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "octokit": "^2.0.10"
+    "octokit": "^2.0.10",
+    "typescript": "^5.4.2"
   },
-  "type": "module"
+  "type": "commonjs"
 }
